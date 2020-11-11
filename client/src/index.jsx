@@ -1,2 +1,3 @@
-const element = <h1>Hello, world</h1>;
-ReactDOM.render(element, document.getElementById('root'));
+import App from './components/app.jsx';
+
+ReactDOM.render(<App />, document.getElementById('root'));
