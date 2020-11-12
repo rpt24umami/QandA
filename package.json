@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "react-dev": "webpack --watch"
+    "react-dev": "webpack --watch",
+    "schema": "mysql -u root < server/schema.sql"
   },
   "repository": {
     "type": "git",
