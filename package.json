@@ -39,6 +39,7 @@
     "@babel/cli": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
     "eslint-config-airbnb-base": "^14.2.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
   }
 }
