@@ -63,7 +63,7 @@ const text = function createQuestionOrAnswer(textParam) {
 };
 
 const dbEntry = function enterIntoDB() {
-  for (let i = 0; i < 99; i += 1) {
+  for (let i = 1; i < 101; i += 1) {
     for (let j = 0; j < 3; j += 1) {
       const questionsParams = {
         productId: i,
