@@ -63,8 +63,10 @@ const text = function createQuestionOrAnswer(textParam) {
 };
 
 const dbEntry = function enterIntoDB() {
+  let numberOfQs;
   for (let i = 1; i < 101; i += 1) {
-    for (let j = 0; j < 3; j += 1) {
+    numberOfQs = mathRandom(4, 6);
+    for (let j = 0; j < numberOfQs; j += 1) {
       const questionsParams = {
         productId: i,
         date: date(),
