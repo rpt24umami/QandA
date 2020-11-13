@@ -1,9 +1,16 @@
-const express = require('express')
-const app = express()
-const port = 3004
+const express = require('express');
+const path = require('path');
 
-app.use(express.static(path.join(__dirname, 'client/dist'));
+const app = express();
+const port = 3004;
 
-app.listen(port, function() {
+app.use(express.static(path.join(__dirname, 'client/dist')));
+
+app.get('/questions', (req, res) => {
+  console.log('in sever');
+  res.send('Get request to home');
+});
+
+app.listen(port, () => {
   console.log(`Listening on port ${port}`);
-})
+});
