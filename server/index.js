@@ -13,8 +13,9 @@ const corsOptions = {
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.get('/questions', cors(corsOptions), (req, res) => {
-  console.log('in sever');
-  res.json('Get request to home');
+  console.log(res);
+
+  res.json('get request');
 });
 
 app.listen(port, () => {
