@@ -1,14 +1,20 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 const port = 3004;
 
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200,
+};
+
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
-app.get('/questions', (req, res) => {
+app.get('/questions', cors(corsOptions), (req, res) => {
   console.log('in sever');
-  res.send('Get request to home');
+  res.json('Get request to home');
 });
 
 app.listen(port, () => {

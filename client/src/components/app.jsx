@@ -6,6 +6,17 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    fetch('http://localhost:3004/questions')
+    .then(res => res.json())
+    .then( (result) => {
+      console.log(result);
+    },
+    (error) => {
+      console.log('error');
+    });
+  }
+
   render() {
     return (
       <div>Hello</div>
