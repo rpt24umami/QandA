@@ -62,6 +62,10 @@ const text = function createQuestionOrAnswer(textParam) {
   return questionOrAnswer[0].toUpperCase() + questionOrAnswer.substring(1);
 };
 
+const helpful = () => {
+  return mathRandom(0, 10);
+};
+
 const dbEntry = function enterIntoDB() {
   let numberOfQs;
   for (let i = 1; i < 101; i += 1) {
@@ -72,6 +76,7 @@ const dbEntry = function enterIntoDB() {
         date: date(),
         author: authors(),
         question: text(string),
+        flag: 0,
       };
 
       const answersParams = {
@@ -79,6 +84,8 @@ const dbEntry = function enterIntoDB() {
         seller: sellers(string),
         answer: text(string),
         question: i,
+        flag: 0,
+        helpful: helpful(),
       };
 
       connection.query('INSERT INTO questions SET ?', questionsParams, (err, res) => {

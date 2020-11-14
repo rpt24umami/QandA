@@ -10,6 +10,7 @@ CREATE TABLE questions (
   date DATE NOT NULL,
   author TEXT NOT NULL,
   question TEXT NOT NULL,
+  flag INT,
   PRIMARY KEY (id)
 );
 
@@ -19,6 +20,8 @@ CREATE TABLE answers (
   seller TEXT NOT NULL,
   answer TEXT NOT NULL,
   question INT NOT NULL REFERENCES questions(id),
+  flag INT,
+  helpful INT,
   PRIMARY KEY (id)
 );
 
