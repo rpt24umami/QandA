@@ -25,7 +25,7 @@ const authors = function pickAuthors() {
   return names[index];
 };
 
-const date = function generateDate() {
+const questionDate = () => {
   let month = mathRandom(1, 12);
   if (month < 10) {
     month = `0${month.toString()}`;
@@ -34,10 +34,39 @@ const date = function generateDate() {
   if (day < 10) {
     day = `0${day.toString()}`;
   }
-  const year = mathRandom(2018, 2020).toString();
+  const year = mathRandom(2018, 2019).toString();
 
   return `${year}-${month}-${day}`;
 };
+
+const answerDate = (qDate) => {
+
+  let day = Number(qDate.slice(8, 10));
+  let month = Number(qDate.slice(5, 7));
+  let year = Number(qDate.slice(0, 4));
+
+  if (day < 24) {
+    day += 3;
+  } else {
+    day = 1;
+    if (month > 11) {
+      month = 1;
+      year += 1;
+    } else {
+      month += 1;
+    }
+  }
+
+  if (day < 10) {
+    day = '0' + day.toString();
+  }
+  if (month < 10) {
+    month = `0${month.toString()}`;
+  }
+
+  return `${year}-${month}-${day}`;
+};
+
 
 const string = 'Live-edge fam knausgaard butcher Helvetica three wolf moon beard air plant activated charcoal hoodie stumptown Food truck art party cold-pressed activated charcoal jianbing etsy drinking vinegar blog waistcoat man braid succulents Taxidermy sriracha kitsch gochujang mixtape photo booth mustache small batch shaman skateboard Photo booth readymade Roof umami swag before they sold out woke Vegan glossier tacos biodiesel hexagon hot chicken deep fried everyday carry four loko umami butcher beard man braid k.';
 
@@ -68,20 +97,22 @@ const helpful = () => {
 
 const dbEntry = function enterIntoDB() {
   let numberOfQs;
+  let seller;
   for (let i = 1; i < 101; i += 1) {
     numberOfQs = mathRandom(4, 6);
+    seller = sellers(string);
     for (let j = 0; j < numberOfQs; j += 1) {
       const questionsParams = {
         productId: i,
-        date: date(),
+        seller: seller,
+        date: questionDate(),
         author: authors(),
         question: text(string),
         flag: 0,
       };
 
       const answersParams = {
-        date: date(),
-        seller: sellers(string),
+        date: answerDate(questionsParams.date),
         answer: text(string),
         question: i,
         flag: 0,
