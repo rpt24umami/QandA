@@ -10,6 +10,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   database: 'tptqanda',
+  password: 'cdw@20TW'
 });
 
 connection.connect((err) => {
@@ -30,6 +31,8 @@ async function loadData() {
     console.log('done');
   } catch (err) {
     console.log(err);
+  } finally {
+    await connection.end();
   }
 }
 
