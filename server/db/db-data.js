@@ -1,16 +1,3 @@
-const mysql = require('mysql');
-
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'tptqanda',
-});
-
-connection.connect((err) => {
-  if (err) throw err;
-  console.log('Connected!');
-});
-
 const mathRandom = function getRandomInt(minParam, maxParam) {
   const min = Math.ceil(minParam);
   const max = Math.floor(maxParam);
@@ -88,48 +75,50 @@ const text = function createQuestionOrAnswer(textParam) {
   if (questionOrAnswer[0] === '.') {
     questionOrAnswer = questionOrAnswer.substring(2);
   }
+
   return questionOrAnswer[0].toUpperCase() + questionOrAnswer.substring(1);
 };
 
 const helpful = () => {
+
   return mathRandom(0, 10);
 };
 
-const dbEntry = function enterIntoDB() {
+const dbData = () => {
+  let answers = [];
+  let questions = [];
+  let id = 1;
   let numberOfQs;
   let seller;
   for (let i = 1; i < 101; i += 1) {
-    numberOfQs = mathRandom(4, 6);
+    numberOfQs = mathRandom(3, 5);
     seller = sellers(string);
     for (let j = 0; j < numberOfQs; j += 1) {
-      const questionsParams = {
-        productId: i,
-        seller: seller,
-        date: questionDate(),
-        author: authors(),
-        question: text(string),
-        flag: 0,
-      };
+      const questionArr = [
+        id,
+        i,
+        seller,
+        questionDate(),
+        authors(),
+        text(string),
+        0,
+      ];
+      questions.push(questionArr);
 
-      const answersParams = {
-        date: answerDate(questionsParams.date),
-        answer: text(string),
-        question: i,
-        flag: 0,
-        helpful: helpful(),
-      };
+      const answerArr = [
+        answerDate(questionArr[3]),
+        text(string),
+        id,
+        0,
+        helpful(),
+      ];
+      answers.push(answerArr);
 
-      connection.query('INSERT INTO questions SET ?', questionsParams, (err, res) => {
-        if (err) throw err;
-
-        return `Last inserted ID: ${res.insertId}`;
-      });
-
-      connection.query('INSERT INTO answers SET ?', answersParams, (err) => {
-        if (err) throw err;
-      });
+      id += 1;
     }
   }
+
+  return [questions, answers];
 };
 
-dbEntry();
+exports.dbData = dbData;

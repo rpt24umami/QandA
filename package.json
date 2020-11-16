@@ -7,7 +7,7 @@
     "test": "test",
     "react-dev": "webpack --watch",
     "schema": "mysql -u root < server/schema.sql",
-    "load-data": "node server/db/db-data.js",
+    "db-data": "node server/db/index.js",
     "start-server": "nodemon server/index.js"
   },
   "repository": {

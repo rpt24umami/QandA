@@ -19,9 +19,10 @@ CREATE TABLE answers (
   id INT NOT NULL AUTO_INCREMENT,
   date DATE NOT NULL,
   answer TEXT NOT NULL,
-  question INT NOT NULL REFERENCES questions(id),
+  question_id INT NOT NULL,
   flag INT,
   helpful INT,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  FOREIGN KEY (question_id) REFERENCES questions(id)
 );
 
