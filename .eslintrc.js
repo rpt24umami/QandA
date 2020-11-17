@@ -1,4 +1,5 @@
 module.exports = {
-  extends: 'airbnb-base',
-  // parser: 'babel-eslnt',
+  extends:
+    'airbnb-base',
+  parser: 'babel-eslnt',
 };

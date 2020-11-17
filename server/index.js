@@ -1,4 +1,3 @@
-
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -6,8 +5,6 @@ const cors = require('cors');
 const app = express();
 const port = 3004;
 const getQsAndAs = require('../db/index.js');
-
-/* eslint no-console: "error" */
 
 const corsOptions = {
   origin: 'http://127.0.0.1:5500',
@@ -26,5 +23,6 @@ app.get('/productid=1/qanda', cors(corsOptions), (req, res) => {
 });
 
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`Listening on port ${port}`);
 });

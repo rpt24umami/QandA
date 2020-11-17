@@ -9,6 +9,7 @@ const connection = mysql.createConnection({
 
 connection.connect((err) => {
   if (err) throw err;
+  // eslint-disable-next-line no-console
   console.log('Connected to mysql server!');
 });
 
