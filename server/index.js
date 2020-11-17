@@ -7,6 +7,8 @@ const app = express();
 const port = 3004;
 const getQsAndAs = require('../db/index.js');
 
+/* eslint no-console: "error" */
+
 const corsOptions = {
   origin: 'http://127.0.0.1:5500',
   optionsSuccessStatus: 200,
