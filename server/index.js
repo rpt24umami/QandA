@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'client/dist')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get('/productid/qanda', cors(corsOptions), (req, res) => {
+app.get('/productid=1/qanda', cors(corsOptions), (req, res) => {
   getQsAndAs.getQsAndAs(1, (data) => {
     res.json(data);
     res.end();
