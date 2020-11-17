@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 const port = 3004;
-const getQuestions = require('./db/helper/getQandA');
+const getQsAndAs = require('../db/index.js');
 
 const corsOptions = {
   origin: 'http://127.0.0.1:5500',
@@ -13,11 +13,14 @@ const corsOptions = {
 };
 
 app.use(express.static(path.join(__dirname, 'client/dist')));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-app.get('/questions', cors(corsOptions), (req, res) => {
-  getQuestions.getQuestions(1);
-  console.log('in server');
-  res.json('get request');
+app.get('/productid/qanda', cors(corsOptions), (req, res) => {
+  getQsAndAs.getQsAndAs(1, (data) => {
+    res.json(data);
+    res.end();
+  });
 });
 
 app.listen(port, () => {
