@@ -22,7 +22,7 @@ function promiseQueries(info) {
   info.map(x => {
     return 'INSERT INTO questions SET ?'
   })
-}
+};
 
 async function loadData() {
   try {
@@ -33,7 +33,7 @@ async function loadData() {
     console.log(err);
   } finally {
     await connection.end();
-  }
-}
+  };
+};
 
 loadData();
