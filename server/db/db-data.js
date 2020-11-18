@@ -91,7 +91,7 @@ const dbData = () => {
   let numberOfQs;
   let seller;
   for (let i = 1; i < 101; i += 1) {
-    numberOfQs = mathRandom(3, 5);
+    numberOfQs = mathRandom(3, 7);
     seller = sellers(string);
     for (let j = 0; j < numberOfQs; j += 1) {
       const questionArr = [
