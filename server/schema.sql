@@ -1,3 +1,4 @@
+/* eslint-disable */
 DROP DATABASE IF EXISTS tptqanda;
 
 CREATE DATABASE tptqanda;
@@ -6,7 +7,7 @@ USE tptqanda;
 
 CREATE TABLE questions (
   id INT NOT NULL AUTO_INCREMENT,
-  productId INT NOT NULL,
+  product_id INT NOT NULL,
   seller TEXT NOT NULL,
   date DATE NOT NULL,
   author TEXT NOT NULL,

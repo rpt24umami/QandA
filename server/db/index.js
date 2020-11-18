@@ -26,7 +26,7 @@ function promiseQueries(info) {
 
 async function loadData() {
   try {
-    const questionQuery = await connection.query('INSERT INTO questions (id, productId, seller, date, author, question, flag) VALUES ?', [questions]);
+    const questionQuery = await connection.query('INSERT INTO questions (id, product_id, seller, date, author, question, flag) VALUES ?', [questions]);
     const answerQuery = await connection.query('INSERT INTO answers (date, answer, question_id, flag, helpful) VALUES ?', [answers]);
     console.log('done');
   } catch (err) {

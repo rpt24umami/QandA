@@ -1,13 +1,13 @@
-const mathRandom = function getRandomInt(minParam, maxParam) {
+const mathRandom = (minParam, maxParam) => {
   const min = Math.ceil(minParam);
   const max = Math.floor(maxParam);
 
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const authors = function pickAuthors() {
+const authors = () => {
   const names = ['Gillian C.', 'Chapman U.', 'Isaiah L.', 'Blair B.', 'Bentle P.', 'Menzie F.', 'Alexander R.', 'Walton S.', 'Rosemary D.', 'Wheeler I.', 'Britney P.', 'Morton M.', 'Damian E.', 'Duncan B.', 'Stan E.', 'Brooks A.', 'Ward O.', 'Benson T.', 'Ferris S.', 'Mitchell E.', 'Ulderico O.', 'Toscani Y.', 'Fiorenza B.', 'Lombardi V.', 'Amando X.'];
-  const index = mathRandom(0, 24);
+  const index = mathRandom(0, names.length - 1);
 
   return names[index];
 };
@@ -57,16 +57,16 @@ const answerDate = (qDate) => {
 
 const string = 'Live-edge fam knausgaard butcher Helvetica three wolf moon beard air plant activated charcoal hoodie stumptown Food truck art party cold-pressed activated charcoal jianbing etsy drinking vinegar blog waistcoat man braid succulents Taxidermy sriracha kitsch gochujang mixtape photo booth mustache small batch shaman skateboard Photo booth readymade Roof umami swag before they sold out woke Vegan glossier tacos biodiesel hexagon hot chicken deep fried everyday carry four loko umami butcher beard man braid k.';
 
-const sellers = function generateSellers(sellersParam) {
+const sellers = (sellersParam) => {
   const index = mathRandom(0, 71);
   const listOfSellers = sellersParam.split(' ');
 
   return listOfSellers[index] + listOfSellers[index + 1];
 };
 
-const text = function createQuestionOrAnswer(textParam) {
-  const start = mathRandom(0, 300);
-  const end = mathRandom(500, 350);
+const text = (textParam) => {
+  const start = mathRandom(0, textParam.length / 2);
+  const end = mathRandom(textParam.length / 2, textParam.length - 2);
   let questionOrAnswer = textParam.slice(start, end);
 
   if (questionOrAnswer[0] === ' ') {
@@ -76,7 +76,7 @@ const text = function createQuestionOrAnswer(textParam) {
     questionOrAnswer = questionOrAnswer.substring(2);
   }
 
-  return questionOrAnswer[0].toUpperCase() + questionOrAnswer.substring(1);
+  return questionOrAnswer[0].toUpperCase() + questionOrAnswer.substring(1) + '.';
 };
 
 const helpful = () => {
