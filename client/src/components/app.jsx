@@ -7,7 +7,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3004/productid=1/qanda')
+    fetch('http://localhost:3004/product-id/:product_id/q-and-a')
     .then(res => res.json())
     .then( (result) => {
       console.log(result);
