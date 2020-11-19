@@ -14,7 +14,7 @@ connection.connect((err) => {
 });
 
 const getQsAndAs = (productId, callback) => {
-  connection.query(`select * from questions INNER JOIN answers ON questions.productId =${productId} AND questions.id = answers.question_id;`, (err, res) => {
+  connection.query(`select * from questions INNER JOIN answers ON questions.product_id =${productId} AND questions.id = answers.question_id;`, (err, res) => {
     if (err) throw err;
     callback(res);
   });
