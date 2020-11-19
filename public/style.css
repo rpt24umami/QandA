@@ -1,0 +1,98 @@
+body {
+  display: block;
+  background-color: #fff;
+}
+
+.q-and-a-section {
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-stretch: normal;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 23px;
+}
+
+.login {
+  font-size: 16px;
+}
+
+.login-link {
+  color: #067c64;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.q-and-a-section {
+  padding: 60px 0 90px;
+  margin: 0;
+}
+
+.list-box {
+  margin-bottom: 30px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.avatar-box {
+  display:flex;
+  height: 99px;
+  width: 58px;
+  padding-top: 18px;
+  padding-right: 18px;
+  float:left;
+}
+
+.avatar-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.heading {
+  display: inline;
+  font-weight: 600;
+  color:#222;
+  font-size: 14px;
+}
+
+.line {
+  display: inline;
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.date {
+  display: inline;
+  font-weight: 400;
+}
+
+.question {
+  display: block;
+  margin-top: 24px;
+  font-weight: 400;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.flag {
+  display: inline;
+  float: right;
+  height: 15px;
+  width: 25px;
+}
