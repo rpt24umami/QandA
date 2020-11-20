@@ -37,7 +37,7 @@ a:hover {
 }
 
 .list-box {
-  margin-bottom: 30px;
+  margin-top: 100px;
   margin-bottom: 30px;
   box-sizing: border-box;
   padding: 0;
@@ -94,12 +94,17 @@ a:hover {
   float: right;
   width: 15px;
   margin-right: 6px;
+  padding-top: 5px;
+}
+
+.flag:hover {
+  background: red;
 }
 
 .answer-box {
   border: 1px solid rgb(221, 221, 221);
   border-radius: 8px;
-  padding: 20px;
+  padding: 20px 0px 20px 20px;
   position: relative;
   top: 12px;
   margin-top: 20px;
@@ -108,3 +113,18 @@ a:hover {
   font-size: 14px;
 }
 
+.thumbs {
+  display: inline;
+  float: left;
+  width: 15px;
+  margin-right: 6px;
+
+}
+
+.helpful {
+  padding-top: 30px;
+}
+
+a:hover {
+  text-decoration: underline;
+}

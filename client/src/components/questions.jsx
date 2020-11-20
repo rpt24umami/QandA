@@ -68,7 +68,7 @@ function Questions(props) {
               {qa.seller} <div className='date'>(TpT Seller)</div>
             </div>
               <div className='question'>{qa.answer}
-                <div className='helpful'><div>Helpful</div>{aFlag}</div>
+                <div className='helpful'><a>{props.thumbs}Helpful</a>{aFlag}</div>
               </div>
           </div>
         </div>
