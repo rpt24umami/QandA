@@ -25,29 +25,53 @@ function formatDate(date) {
   }
 
   return `${newmonth} ${day}, ${year}`
-  };
+};
+
+function displayFlag(flagInt) {
+  console.log(flagInt);
+  const unFlagged = <img src='https://www.flaticon.com/svg/static/icons/svg/455/455582.svg' className='flag' />;
+  const flagged = <img src='https://www.flaticon.com/svg/static/icons/svg/455/455885.svg' className='flag' />;
+
+  if(flagInt === 0) {
+    return unFlagged;
+  } else {
+    return flagged;
+  }
+};
 
 
 function Questions(props) {
   const list = props.list;
   const avatar = props.avatar;
-  const flag = props.flag;
   const listQsandAs = list.map((qa) => {
-    const date = formatDate(qa.question_date);
+    const qDate = formatDate(qa.question_date);
+    const qFlag = displayFlag(qa.question_flag);
+    const aDate = formatDate(qa.answer_date);
+    const aFlag = displayFlag(qa.answer_flag);
+
     return (
       <div key={qa.id}>
-        <span className='avatar-box'>{avatar}</span>
+        <div className='question-box'>
+          <span className='avatar-box'>{avatar}</span>
           <div className='heading'>Question
             <div className='line'> | </div>
-            <div className='date'>{date} from </div>
+            <div className='date'>{qDate} from </div>
              {qa.author}
-          <div className='question'>{qa.question} <div>
-            {flag}
+            <div className='question'>{qa.question}
+            {qFlag}</div>
           </div>
+          <div className='answer-box'>
+            <span className='avatar-box'>{avatar}</span>
+            <div className='heading'>Answer
+              <div className='line'> | </div>
+              <div className='date'>{aDate} from </div>
+              {qa.seller} <div className='date'>(TpT Seller)</div>
+            </div>
+              <div className='question'>{qa.answer}
+                <div className='helpful'><div>Helpful</div>{aFlag}</div>
+              </div>
           </div>
-
-      </div>
-        <li>{avatar} {qa.answer}</li>
+        </div>
       </div>
     )}
   );
