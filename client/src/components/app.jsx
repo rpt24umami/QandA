@@ -10,6 +10,7 @@ class App extends React.Component {
       thumbs: <img src='https://www.flaticon.com/svg/static/icons/svg/633/633759.svg' className='thumbs'/>
     };
     this.handleHelpful =  this.handleHelpful.bind(this);
+    this.handleFlag = this.handleFlag.bind(this);
   }
 
   componentDidMount() {
@@ -49,6 +50,10 @@ class App extends React.Component {
     });
   }
 
+  handleFlag() {
+    alert('Are you sure you want to mark this comment as inappropriate?');
+  }
+
   render() {
     return (
       <div className='q-and-a-section'>
@@ -57,7 +62,8 @@ class App extends React.Component {
           log in</a> to post a question.</p>
         <div className='list-box'>
           <Questions list={this.state.list} avatar={this.state.avatar}
-          thumbs={this.state.thumbs} handleHelpful={this.handleHelpful}/>
+          thumbs={this.state.thumbs} handleHelpful={this.handleHelpful}
+          handleFlag={this.handleFlag}/>
         </div>
       </div>
     )
