@@ -20,4 +20,11 @@ const getQsAndAs = (productId, callback) => {
   });
 };
 
-module.exports = { getQsAndAs };
+const handleHelpful = (answerIdToChange, callback) => {
+  connection.query(`update answers set answer_helpful = answer_helpful + 1 where answer_id = ${answerIdToChange};`, (err, res) => {
+    if (err) throw err;
+    callback(res);
+  });
+};
+
+module.exports = { getQsAndAs, handleHelpful };

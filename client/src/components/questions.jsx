@@ -28,7 +28,6 @@ function formatDate(date) {
 };
 
 function displayFlag(flagInt) {
-  console.log(flagInt);
   const unFlagged = <img src='https://www.flaticon.com/svg/static/icons/svg/455/455582.svg' className='flag' />;
   const flagged = <img src='https://www.flaticon.com/svg/static/icons/svg/455/455885.svg' className='flag' />;
 
@@ -68,7 +67,7 @@ function Questions(props) {
               {qa.seller} <div className='date'>(TpT Seller)</div>
             </div>
               <div className='question'>{qa.answer}
-                <div className='helpful'><a>{props.thumbs}Helpful</a>{aFlag}</div>
+                <div className='helpful'><a value={qa.answer_id} onClick={props.handleHelpful}>{props.thumbs}Helpful ({qa.answer_helpful})</a>{aFlag}</div>
               </div>
           </div>
         </div>
