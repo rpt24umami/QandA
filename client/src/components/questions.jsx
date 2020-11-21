@@ -57,7 +57,8 @@ function Questions(props) {
             <div className='date'>{qDate} from </div>
              {qa.author}
             <div className='question'>{qa.question}
-            {qFlag}</div>
+            {qFlag}
+            </div>
           </div>
           <div className='answer-box'>
             <span className='avatar-box'>{avatar}</span>
@@ -67,7 +68,9 @@ function Questions(props) {
               {qa.seller} <div className='date'>(TpT Seller)</div>
             </div>
               <div className='question'>{qa.answer}
-                <div className='helpful'><a value={qa.answer_id} onClick={props.handleHelpful}>{props.thumbs}Helpful ({qa.answer_helpful})</a>{aFlag}</div>
+                <div className='helpful'>
+                  <a value={qa.answer_id} onClick={props.handleHelpful}>{props.thumbs}Helpful ({qa.answer_helpful})</a>
+                 {aFlag}</div>
               </div>
           </div>
         </div>

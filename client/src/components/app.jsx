@@ -20,7 +20,7 @@ class App extends React.Component {
         list: result
       });
     })
-    .catch(err) => {
+    .catch((err) => {
       throw err;
     });
   }
@@ -44,7 +44,7 @@ class App extends React.Component {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({answerId: answerId})
     })
-    .catch(err) => {
+    .catch((err) => {
       throw err;
     });
   }
@@ -53,9 +53,11 @@ class App extends React.Component {
     return (
       <div className='q-and-a-section'>
         <h3>Questions & Answers</h3>
-        <p className='login'>Please <a className='login-link' href=''>log in</a> to post a question.</p>
+        <p className='login'>Please <a className='login-link' href=''>
+          log in</a> to post a question.</p>
         <div className='list-box'>
-          <Questions list={this.state.list} avatar={this.state.avatar} thumbs={this.state.thumbs} handleHelpful={this.handleHelpful}/>
+          <Questions list={this.state.list} avatar={this.state.avatar}
+          thumbs={this.state.thumbs} handleHelpful={this.handleHelpful}/>
         </div>
       </div>
     )
