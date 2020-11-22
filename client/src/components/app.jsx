@@ -1,7 +1,21 @@
+
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      questions: '',
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3004/product-id/:product_id/q-and-a')
+    .then(res => res.json())
+    .then( (result) => {
+      console.log(result);
+    },
+    (error) => {
+      console.log('error');
+    });
   }
 
   render() {

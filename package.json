@@ -6,8 +6,12 @@
   "scripts": {
     "test": "test",
     "react-dev": "webpack --watch",
+<<<<<<< HEAD
     "seed": "mysql -u root -p < server/schema.sql &&node server/db/index.js",
     "start-server": "nodemon server/index.js"
+=======
+    "start-server": "nodemon --exec babel-node server/index.js"
+>>>>>>> sever-and-api
   },
   "repository": {
     "type": "git",
@@ -23,7 +27,9 @@
   },
   "homepage": "https://github.com/rpt24umami/tptQandAService#readme",
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.6",
     "@babel/preset-env": "^7.12.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
@@ -39,8 +45,11 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
-    "@babel/cli": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
+<<<<<<< HEAD
+=======
+    "body-parser": "^1.19.0",
+>>>>>>> sever-and-api
     "cors": "^2.8.5",
     "eslint-config-airbnb-base": "^14.2.1",
     "express": "^4.17.1",
