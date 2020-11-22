@@ -27,4 +27,4 @@ const handleHelpful = (answerIdToChange, callback) => {
   });
 };
 
-module.exports = { getQsAndAs, handleHelpful };
+module.exports = { getQsAndAs, handleHelpful, connection };
