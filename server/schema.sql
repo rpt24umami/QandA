@@ -1,4 +1,3 @@
-/* eslint-disable */
 DROP DATABASE IF EXISTS tptqanda;
 
 CREATE DATABASE tptqanda;
