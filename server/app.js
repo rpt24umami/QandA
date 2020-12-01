@@ -13,7 +13,7 @@ app.use(express.json());
 app.get('/product/:product_id/q-and-a', (req, res) => {
   const productId = req.params.product_id;
   getQsAndAs.getQsAndAs(productId, (data) => {
-    res.json(data);
+    res.status(200).json(data);
     res.end();
   });
 });
