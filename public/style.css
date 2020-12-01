@@ -36,6 +36,10 @@ a:hover {
   margin: 0;
 }
 
+.question-box {
+  margin: 50px;
+}
+
 .list-box {
   margin-top: 100px;
   margin-bottom: 30px;

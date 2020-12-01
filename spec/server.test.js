@@ -1,14 +1,14 @@
 const request = require('supertest');
 const app = require('../server/app.js');
-const con = require('../db/index.js')
+const con = require('../db/index.js');
 
 beforeAll((done) => {
-  done()
+  done();
 });
 
 afterAll((done) => {
   con.connection.end();
-  done()
+  done();
 });
 
 describe('Test the root path', () => {
@@ -19,7 +19,7 @@ describe('Test the root path', () => {
         expect(response.statusCode).toBe(200);
       });
   });
-})
+});
 
 describe('Test returned data', () => {
   test('It should response the GET method', () => {
@@ -31,7 +31,3 @@ describe('Test returned data', () => {
       });
   });
 });
-
-
-
-
