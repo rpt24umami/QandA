@@ -7,7 +7,7 @@
     "test": "jest",
     "react-dev": "webpack --watch",
     "start-server": "nodemon --exec babel-node server/index.js",
-    "lint": "eslint ."
+    "lint": "eslint client"
   },
   "repository": {
     "type": "git",
