@@ -58,7 +58,7 @@ function Questions(props) {
             {qa.author}
             <div className="question">
               {qa.question}
-              {qFlag}
+              <div onClick={props.handleFlag}>{qFlag}</div>
             </div>
           </div>
           <div className="answer-box">
@@ -85,7 +85,7 @@ function Questions(props) {
                   {qa.answer_helpful}
                   )
                 </a>
-                {aFlag}
+                <div onClick={props.handleFlag}>{aFlag}</div>
               </div>
             </div>
           </div>

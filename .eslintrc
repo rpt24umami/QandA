@@ -14,6 +14,7 @@
       "SharedArrayBuffer": "readonly"
   },
   "ignorePatterns": ["bundle.js", "server.test.js"],
+
   "parserOptions": {
       "ecmaFeatures": {
           "jsx": true
