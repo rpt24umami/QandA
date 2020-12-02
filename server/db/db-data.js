@@ -27,7 +27,6 @@ const questionDate = () => {
 };
 
 const answerDate = (qDate) => {
-
   let day = Number(qDate.slice(8, 10));
   let month = Number(qDate.slice(5, 7));
   let year = Number(qDate.slice(0, 4));
@@ -45,7 +44,7 @@ const answerDate = (qDate) => {
   }
 
   if (day < 10) {
-    day = '0' + day.toString();
+    day = `0${day.toString()}`;
   }
   if (month < 10) {
     month = `0${month.toString()}`;
@@ -53,7 +52,6 @@ const answerDate = (qDate) => {
 
   return `${year}-${month}-${day}`;
 };
-
 
 const string = 'Live-edge fam knausgaard butcher Helvetica three wolf moon beard air plant activated charcoal hoodie stumptown Food truck art party cold-pressed activated charcoal jianbing etsy drinking vinegar blog waistcoat man braid succulents Taxidermy sriracha kitsch gochujang mixtape photo booth mustache small batch shaman skateboard Photo booth readymade Roof umami swag before they sold out woke Vegan glossier tacos biodiesel hexagon hot chicken deep fried everyday carry four loko umami butcher beard man braid k.';
 
@@ -76,17 +74,14 @@ const text = (textParam) => {
     questionOrAnswer = questionOrAnswer.substring(2);
   }
 
-  return questionOrAnswer[0].toUpperCase() + questionOrAnswer.substring(1) + '.';
+  return `${questionOrAnswer[0].toUpperCase() + questionOrAnswer.substring(1)}.`;
 };
 
-const helpful = () => {
-
-  return mathRandom(0, 10);
-};
+const helpful = () => mathRandom(0, 10);
 
 const dbData = () => {
-  let answers = [];
-  let questions = [];
+  const answers = [];
+  const questions = [];
   let id = 1;
   let numberOfQs;
   let seller;

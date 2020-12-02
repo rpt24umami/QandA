@@ -1,28 +1,21 @@
+const mysql = require('mysql');
 const dbData = require('./db-data.js');
 
 const data = dbData.dbData();
 const questions = data[0];
 const answers = data[1];
 
-const mysql = require('mysql');
-
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   database: 'tptqanda',
-  password: 'cdw@20TW'
+  password: 'cdw@20TW',
 });
 
 connection.connect((err) => {
   if (err) throw err;
   console.log('Connected to mysql server!');
 });
-
-function promiseQueries(info) {
-  info.map(x => {
-    return 'INSERT INTO questions SET ?'
-  })
-};
 
 async function loadData() {
   try {
