@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: 2,
+      productId: 45,
       list: [],
       avatar: <img src="https://static-assets.teacherspayteachers.com/images/avatars/default.jpg" className="avatar-img" alt="" />,
       thumbs: <img src="https://www.flaticon.com/svg/static/icons/svg/633/633759.svg" className="thumbs" alt="" />,
@@ -58,7 +58,7 @@ class App extends React.Component {
   // eslint-disable-next-line class-methods-use-this
   handleFlag() {
     // eslint-disable-next-line no-alert
-    alert('Are you sure you want to mark this comment as inappropriate?');
+    alert('Log in to mark inappropriate');
   }
 
   render() {
