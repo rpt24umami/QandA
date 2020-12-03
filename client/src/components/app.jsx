@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: 45,
+      productId: 4,
       list: [],
       avatar: <img src="https://static-assets.teacherspayteachers.com/images/avatars/default.jpg" className="avatar-img" alt="" />,
       thumbs: <img src="https://www.flaticon.com/svg/static/icons/svg/633/633759.svg" className="thumbs" alt="" />,
