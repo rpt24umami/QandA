@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "react-dev": "webpack --watch",
+    "build":"webpack",
     "start-server": "nodemon --exec babel-node server/index.js",
     "seed": "mysql -u root -p < server/schema.sql &&node server/db/index.js",
     "lint": "eslint client"
