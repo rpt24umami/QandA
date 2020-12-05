@@ -9,7 +9,17 @@ app.use(express.static('client/dist'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get('/product/:product_id/q-and-a', (req, res) => {
+app.get('/products/:id', (req, res) => {
+  if (req.params.id === 'bundle.js') {
+    res.sendFile('/Users/Meyvi/Documents/Hack_Reactor/FEC/tptQandAService/client/dist/bundle.js');
+  } else if (req.params.id === 'style.css') {
+    res.sendFile('/Users/Meyvi/Documents/Hack_Reactor/FEC/tptQandAService/client/dist/style.css');
+  } else {
+    res.sendFile('/Users/Meyvi/Documents/Hack_Reactor/FEC/tptQandAService/client/dist/index.html');
+  }
+});
+
+app.get('/products/:product_id/q-and-a', (req, res) => {
   const productId = req.params.product_id;
   getQsAndAs.getQsAndAs(productId, (data) => {
     res.status(200).json(data);
@@ -17,7 +27,7 @@ app.get('/product/:product_id/q-and-a', (req, res) => {
   });
 });
 
-app.post('/product/:product_id/helpful', (req, res) => {
+app.post('/products/:product_id/helpful', (req, res) => {
   const answerIdToChange = req.body.answerId;
 
   getQsAndAs.handleHelpful(answerIdToChange, () => {

@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: 4,
+      productId: 1,
       list: [],
       avatar: <img src="https://static-assets.teacherspayteachers.com/images/avatars/default.jpg" className="avatar-img" alt="" />,
       thumbs: <img src="https://www.flaticon.com/svg/static/icons/svg/633/633759.svg" className="thumbs" alt="" />,
@@ -17,17 +17,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const { productId } = this.state;
-    fetch(`http://localhost:3004/product/${productId}/q-and-a`)
-      .then((res) => res.json())
-      .then((result) => {
-        this.setState({
-          list: result,
+    this.setState({
+      productId: [window.location.href.split('/')[4]],
+    }, () => {
+      fetch(`http://localhost:3004/products/${this.state.productId}/q-and-a`)
+        .then((res) => res.json())
+        .then((result) => {
+          this.setState({
+            list: result,
+          });
+        })
+        .catch((err) => {
+          throw err;
         });
-      })
-      .catch((err) => {
-        throw err;
-      });
+    });
   }
 
   handleHelpful(event) {
@@ -45,7 +48,7 @@ class App extends React.Component {
     event.preventDefault();
 
     const { productId } = this.state;
-    fetch(`http://localhost:3004/product/${productId}/helpful`, {
+    fetch(`http://localhost:3004/products/${productId}/helpful`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ answerId }),
