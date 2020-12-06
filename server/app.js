@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const getQsAndAs = require('../db/index.js');
@@ -11,11 +12,11 @@ app.use(express.json());
 
 app.get('/products/:id', (req, res) => {
   if (req.params.id === 'bundle.js') {
-    res.sendFile('/Users/Meyvi/Documents/Hack_Reactor/FEC/tptQandAService/client/dist/bundle.js');
+    res.sendFile(path.resolve(__dirname, '../client/dist/bundle.js'));
   } else if (req.params.id === 'style.css') {
-    res.sendFile('/Users/Meyvi/Documents/Hack_Reactor/FEC/tptQandAService/client/dist/style.css');
+    res.sendFile(path.resolve(__dirname, '../client/dist/style.css'));
   } else {
-    res.sendFile('/Users/Meyvi/Documents/Hack_Reactor/FEC/tptQandAService/client/dist/index.html');
+    res.sendFile(path.resolve(__dirname, '../client/dist/index.html'));
   }
 });
 
