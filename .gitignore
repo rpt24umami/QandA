@@ -103,3 +103,6 @@ typings/
 .tern-port
 
 .eslintrc.js
+
+aws_config.js
+*.pem
