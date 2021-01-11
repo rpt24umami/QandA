@@ -20,7 +20,7 @@ class App extends React.Component {
     this.setState({
       productId: [window.location.href.split('/')[4]],
     }, () => {
-      fetch(`http://localhost:3004/products/${this.state.productId}/q-and-a`)
+      fetch(`http://18.223.239.5:3004/products/${this.state.productId}/q-and-a`)
         .then((res) => res.json())
         .then((result) => {
           this.setState({
@@ -48,13 +48,13 @@ class App extends React.Component {
     event.preventDefault();
 
     const { productId } = this.state;
-    fetch(`http://localhost:3004/products/${productId}/helpful`, {
+    fetch(`http://18.223.239.5:3004/products/${productId}/helpful`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ answerId }),
     })
       .catch((err) => {
-        throw err;
+        console.log(err);
       });
   }
 
