@@ -32,12 +32,12 @@ a:hover {
 }
 
 .q-and-a-section {
-  padding: 50px 50px;
+  /*padding: 50px 50px;*/
   margin: 0;
 }
 
 .question-box {
-  margin: 50px;
+ margin-bottom: 50px;
 }
 
 .list-box {
