@@ -101,7 +101,7 @@ typings/
 
 # TernJS port file
 .tern-port
-
+*.pem
 .eslintrc.js
 
 aws_config.js
