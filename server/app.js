@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const compression = require('compression');
 
 const app = express();
 const getQsAndAs = require('../db/index.js');
@@ -9,6 +10,7 @@ app.use(cors());
 app.use(express.static('client/dist'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(compression());
 
 app.get('/products/:id', (req, res) => {
   if (req.params.id === 'bundle.js') {

@@ -30,6 +30,7 @@
     "@babel/node": "^7.12.6",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
+    "axios": "^0.21.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
     "eslint": "^7.14.0",
@@ -51,6 +52,7 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
