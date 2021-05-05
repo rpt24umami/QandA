@@ -2,6 +2,8 @@
 
 > Products questions and answers module
 
+![](tptQandA.gif)
+
 ## Related Projects
 
   - https://github.com/rpt24umami/tptImageModule.git
